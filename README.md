@@ -26,6 +26,7 @@
 # Dependency Management:
 - pip for Python package management
 
+---
 
 # Instructions
 - To run the program, the following modules need to be installed on your system:
