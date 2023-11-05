@@ -2,8 +2,6 @@
 
 # Project Tech Stack
 ---
---
--
 
 # Programming Languages:
 - Python
