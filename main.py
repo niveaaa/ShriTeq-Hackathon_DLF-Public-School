@@ -5,9 +5,10 @@ import streamlit as st
 import time
 import openai
 from openai import ChatCompletion
+import speech_recognition as sr
 
 
-
+recognizer = sr.Recognizer()
 
 def text_to_speech(text):
     tts = gTTS(text)
@@ -72,7 +73,7 @@ if st.button("Start Chat"):
 
 
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 messages = [{"role": "system", "content": "You are a teacher who teaches all subjects, you are developed by the students of DLFPS for teaching dyslexic and autistic students who have a learning disability, so while answering any questions, keep in mind that there is a possibility that the user wouldn't understand your response easily, so prefer repetition and elaborating your answer using simple words. Your name is Shadow Teacher"}]
 
@@ -97,7 +98,25 @@ def send_message(user_message):
 st.title("Shadow Teacher Chatbot")
 
 user_input = st.text_input("You:", "Type your message here")
+# Voice input button
+voice_input = st.checkbox("Voice Input")
+
+
 if st.button("Send"):
+    if voice_input:
+        # Use microphone for voice input
+        with sr.Microphone() as source:
+            st.write("Listening...")
+            try:
+                audio = recognizer.listen(source)
+                user_input = recognizer.recognize_google(audio)
+                st.write(f"Voice Input: {user_input}")
+            except sr.UnknownValueError:
+                st.write("Google Web Speech API could not understand audio")
+            except sr.RequestError as e:
+                st.write(f"Could not request results from Google Web Speech API; {e}")
+
+    # Send user message and receive response
     response = send_message(user_input)
     st.text(f"Shadow Teacher: {response}")
     
