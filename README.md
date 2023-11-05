@@ -4,7 +4,7 @@
 # Project Tech Stack
 
 # Programming Languages:
--Python
+- Python
 
 # Web Framework:
 	Streamlit
