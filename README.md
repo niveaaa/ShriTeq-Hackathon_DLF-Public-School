@@ -7,28 +7,28 @@
 - Python
 
 # Web Framework:
-	Streamlit
+- Streamlit
 
 # AI and Natural Language Processing (NLP):
-	OpenAI GPT-3.5 Turbo for chatbot responses
-	SpeechRecognition for voice input
+- OpenAI GPT-3.5 Turbo for chatbot responses
+- SpeechRecognition for voice input
 
 # Text-to-Speech (TTS):
-	gTTS (Google Text-to-Speech) for converting text to speech
-	pygame for audio playback
+- gTTS (Google Text-to-Speech) for converting text to speech
+- pygame for audio playback
 
 # Speech Recognition:
-	SpeechRecognition library for voice input
+- SpeechRecognition library for voice input
 
 # Development Tools:
-	VS Code
+- VS Code
 
 # Dependency Management:
-	pip for Python package management
+- pip for Python package management
 
 
 # Instructions
-	To run the program, the following modules need to be installed on your system:
+- To run the program, the following modules need to be installed on your system:
 
 	- openai
 	- streamlit
