@@ -1,32 +1,30 @@
-# ShriTeq-Hackathon_DLF-Public-School
-
 # Project Tech Stack
 
 Programming Languages:
-Python
+	Python
 
 Web Framework:
-Streamlit
+	Streamlit
 
 AI and Natural Language Processing (NLP):
-OpenAI GPT-3.5 Turbo for chatbot responses
-SpeechRecognition for voice input
+	OpenAI GPT-3.5 Turbo for chatbot responses
+	SpeechRecognition for voice input
 
 Text-to-Speech (TTS):
-gTTS (Google Text-to-Speech) for converting text to speech
-pygame for audio playback
+	gTTS (Google Text-to-Speech) for converting text to speech
+	pygame for audio playback
 
 Speech Recognition:
-SpeechRecognition library for voice input
+	SpeechRecognition library for voice input
 
 Development Tools:
-VS Code
+	VS Code
 
 Dependency Management:
-pip for Python package management
+	pip for Python package management
 
 Version Control:
-Git and GitHub for source code version control and collaboration
+	Git and GitHub for source code version control and collaboration
 
 
 
