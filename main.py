@@ -1,6 +1,34 @@
+from gtts import gTTS
+import pygame
+import tempfile
 import streamlit as st
+import time
 import openai
 from openai import ChatCompletion
+
+
+
+
+def text_to_speech(text):
+    tts = gTTS(text)
+
+    # Save the TTS output to a temporary file
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as temp_audio:
+        tts.save(temp_audio.name)
+
+    # Initialize pygame mixer
+    pygame.mixer.init()
+
+    # Load and play the audio
+    pygame.mixer.music.load(temp_audio.name)
+    pygame.mixer.music.play()
+
+    # Get the duration of the audio
+    duration = pygame.mixer.Sound(temp_audio.name).get_length()
+
+    # Ensure the audio plays completely before exiting
+    pygame.time.wait(int(duration * 1000))
+    pygame.mixer.quit()
 
 
 
@@ -44,7 +72,7 @@ if st.button("Start Chat"):
 
 
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 messages = [{"role": "system", "content": "You are a teacher who teaches all subjects, you are developed by the students of DLFPS for teaching dyslexic and autistic students who have a learning disability, so while answering any questions, keep in mind that there is a possibility that the user wouldn't understand your response easily, so prefer repetition and elaborating your answer using simple words. Your name is Shadow Teacher"}]
 
@@ -58,8 +86,11 @@ def send_message(user_message):
     )
     reply = response["choices"][0]["message"]["content"]
     messages.append({"role": "assistant", "content": reply})
-    return reply
 
+    # Convert the chatbot's response to audio
+    text_to_speech(reply)
+
+    return reply
 
 
 
@@ -69,6 +100,10 @@ user_input = st.text_input("You:", "Type your message here")
 if st.button("Send"):
     response = send_message(user_input)
     st.text(f"Shadow Teacher: {response}")
+    
 
 if st.button("Quit"):
     st.stop()
+
+
+    
