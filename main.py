@@ -13,21 +13,16 @@ recognizer = sr.Recognizer()
 def text_to_speech(text):
     tts = gTTS(text)
 
-    # Save the TTS output to a temporary file
     with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as temp_audio:
         tts.save(temp_audio.name)
 
-    # Initialize pygame mixer
     pygame.mixer.init()
 
-    # Load and play the audio
     pygame.mixer.music.load(temp_audio.name)
     pygame.mixer.music.play()
 
-    # Get the duration of the audio
     duration = pygame.mixer.Sound(temp_audio.name).get_length()
 
-    # Ensure the audio plays completely before exiting
     pygame.time.wait(int(duration * 1000))
     pygame.mixer.quit()
 
@@ -88,7 +83,6 @@ def send_message(user_message):
     reply = response["choices"][0]["message"]["content"]
     messages.append({"role": "assistant", "content": reply})
 
-    # Convert the chatbot's response to audio
     text_to_speech(reply)
 
     return reply
@@ -98,13 +92,12 @@ def send_message(user_message):
 st.title("Shadow Teacher Chatbot")
 
 user_input = st.text_input("You:", "Type your message here")
-# Voice input button
+
 voice_input = st.checkbox("Voice Input")
 
 
 if st.button("Send"):
     if voice_input:
-        # Use microphone for voice input
         with sr.Microphone() as source:
             st.write("Listening...")
             try:
@@ -116,7 +109,6 @@ if st.button("Send"):
             except sr.RequestError as e:
                 st.write(f"Could not request results from Google Web Speech API; {e}")
 
-    # Send user message and receive response
     response = send_message(user_input)
     st.text(f"Shadow Teacher: {response}")
     
