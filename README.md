@@ -23,8 +23,6 @@
 # Dependency Management:
 	pip for Python package management
 
-# Version Control:
-	Git and GitHub for source code version control and collaboration
 
 # Instructions
 	To run the program, the following modules need to be installed on your system:
