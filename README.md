@@ -1,6 +1,9 @@
 # ShriTeq-Hackathon_DLF-Public-School
 
- # Project Tech Stack
+# Project Tech Stack
+---
+--
+-
 
 # Programming Languages:
 - Python
