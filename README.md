@@ -1,29 +1,29 @@
 # Project Tech Stack
 
-Programming Languages:
+# Programming Languages:
 	Python
 
-Web Framework:
+# Web Framework:
 	Streamlit
 
-AI and Natural Language Processing (NLP):
+# AI and Natural Language Processing (NLP):
 	OpenAI GPT-3.5 Turbo for chatbot responses
 	SpeechRecognition for voice input
 
-Text-to-Speech (TTS):
+# Text-to-Speech (TTS):
 	gTTS (Google Text-to-Speech) for converting text to speech
 	pygame for audio playback
 
-Speech Recognition:
+# Speech Recognition:
 	SpeechRecognition library for voice input
 
-Development Tools:
+# Development Tools:
 	VS Code
 
-Dependency Management:
+# Dependency Management:
 	pip for Python package management
 
-Version Control:
+# Version Control:
 	Git and GitHub for source code version control and collaboration
 
 
