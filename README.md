@@ -26,18 +26,19 @@
 # Version Control:
 	Git and GitHub for source code version control and collaboration
 
+# Instructions
+	To run the program, the following modules need to be installed on your system:
+
+	- openai
+	- streamlit
+ 	- pygame
+  	- gTTs
+   	- SpeechRecognition
 
 
+	To run the program..
+	in the folder where you'll download the file, open terminal and run the following command - 
 
-to run the program, the following modules need to be installed
-
-openai
-streamlit
-
-
-to run the program..
-in the folder where you'll download the file, open terminal and run the following command - 
-
-streamlit run main.py
+	streamlit run main.py
 
 
