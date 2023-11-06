@@ -16,6 +16,7 @@
 # Text-to-Speech (TTS):
 - gTTS (Google Text-to-Speech) for converting text to speech
 - pygame for audio playback
+- pydub for audio manipulation
 
 # Speech Recognition:
 - SpeechRecognition library for voice input
@@ -36,6 +37,7 @@
  	- pygame
   	- gTTs
    	- SpeechRecognition
+   	- pydub
 
 
 	To run the program..
